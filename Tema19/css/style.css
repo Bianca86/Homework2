@@ -1,0 +1,382 @@
+/* reset */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+html {
+  font-size: 16px;
+}
+
+* {
+  /* 
+    * = toate elementele
+  */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.img {
+  display: block;
+  max-width: 100%;
+}
+
+*:focus {
+  /* scoatem border pe camputrile selectate */
+  box-shadow: unset;
+  outline: none;
+}
+
+body {
+  padding-top: 80px;
+  background-color: #eaeaea;
+  /* ca sa nu avem nimic sub header */
+  font-family: "Open Sans", sans-serif;
+}
+
+/* end reset */
+
+.search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.search .fa-facebook {
+  font-size: 36px;
+  background-color: #3b5998;
+  color: #ffffff;
+  width: 1.2em;
+  height: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.topSearch {
+  display: block;
+  height: 36px;
+  font-size: 18px;
+  border: unset;
+  border-radius: 18px;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 0 15px;
+  color: #ffffff;
+}
+
+.container {
+  width: 600px;
+}
+
+.middle-nav {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 40px;
+}
+
+.container ul {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.container li {
+  flex: 1;
+}
+
+.container > ul > li > a {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 5px;
+  padding: 10px 0;
+  height: 100%;
+  transition: background-color 0.3s;
+}
+
+.container > ul > li > a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.links {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background-color: #242526;
+}
+
+.links a {
+  color: #ffffff;
+}
+
+.links .fa {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5em;
+  height: 2.5em;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+}
+
+.links > ul {
+  display: flex;
+  align-items: center;
+}
+
+.links > ul > li {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  position: relative;
+}
+
+.links a {
+  display: flex;
+  align-items: center;
+}
+
+.links a img {
+  border-radius: 50%;
+  display: block;
+  margin-right: 5px;
+}
+
+.container > ul > li > a {
+  position: relative;
+}
+.container > ul > li > a span {
+  background-color: red;
+  color: white;
+  font-size: 0.8rem;
+  display: flex;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.2rem;
+  left: 60%;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.links .dropdown {
+  position: absolute;
+  top: 100%;
+  right: -10px;
+  background-color: #242526;
+  padding: 5px;
+  border-radius: 7px;
+  width: 200px;
+  display: none;
+}
+
+.links .dropdown.open {
+  display: block;
+}
+
+.links .dropdown a {
+  display: flex;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.links .dropdown a .fa {
+  margin-right: 0.5rem;
+}
+
+/* 
+.dropdown .open - apeleaza DOAR elementele 
+cu clasa open care au un paritne cu clasa dropdown
+
+.dropdown.open - apeleaza DOAR elementele
+ce au si clasa dropdown dar si clasa open
+*/
+
+/* Content style */
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+aside {
+  width: 200px;
+}
+
+main {
+  width: 600px;
+}
+
+article {
+  margin-bottom: 20px;
+}
+
+.sticky {
+  position: sticky;
+  top: 70px;
+}
+
+/* Post style */
+
+.post {
+  background-color: #ffffff;
+  padding: 5px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+  /* box shadow: dreapta jos imprastiere culoare */
+  border-radius: 4px;
+}
+
+.post .header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.post .header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.post .header .profile-image {
+  width: 50px;
+}
+
+.post .header .options {
+  width: 40px;
+  text-align: center;
+}
+
+.post .header .author {
+  flex: 1;
+}
+
+.post .header .fullname {
+  font-weight: 600;
+  display: block;
+  line-height: 12px;
+}
+
+.post .header .date {
+  font-weight: 400;
+  display: block;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.post .content * {
+  max-width: 100%;
+  margin: 0 auto 10px;
+}
+
+.reacts {
+  display: flex;
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+.reacts .count-reacts {
+  flex: 3;
+}
+
+.reacts .comments-number {
+  flex: 1;
+  text-align: right;
+}
+
+.reacts .fa {
+  margin-right: -5px;
+}
+
+.reacts .icons .fa:last-child {
+  margin-right: 0;
+}
+
+.post .actions {
+  display: flex;
+  border-bottom: 1px solid #eaeaea;
+  margin-bottom: 10px;
+}
+
+.post .actions li {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.post .actions .fa {
+  font-size: 24px;
+}
+
+.post .actions span {
+  position: relative;
+  bottom: 2px;
+}
+
+.comment-single {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.comment-single .profile-image {
+  width: 40px;
+}
+
+.comment-single .comment-content {
+  flex: 1;
+}
+
+.comment-single .comment-content * {
+  display: block;
+  width: 100%;
+}
+
+.comment-single .comment-content a {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.comment-single .comment-content .date {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.comment-single .comment-content input {
+  padding: 7px 10px;
+  border-radius: 15px;
+  border: unset;
+  background-color: #fafafa;
+}
+
+.comment-single img {
+  border-radius: 50%;
+}
+
+.comment-single .profile-image img {
+  width: 30px;
+  height: 30px;
+}

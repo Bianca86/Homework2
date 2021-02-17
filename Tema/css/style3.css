@@ -1,0 +1,33 @@
+body {
+  background-color: #d3c0cd;
+}
+.content {
+  text-align: center;
+  font-style: normal;
+  font-family: "Source Serif Pro";
+}
+.field {
+  text-align: center;
+  font-style: normal;
+  font-family: "Source Serif Pro";
+  font-size: medium;
+  color: #1d1128;
+  box-sizing: border-box;
+  width: 250px;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 5px;
+  box-shadow: 2px;
+}
+
+.confirm {
+  text-align: center;
+  text-shadow: 2px 2px 5px grey;
+  font-size: medium;
+  font-style: normal;
+  width: 250px;
+  border-radius: 10px;
+  padding: 5px;
+  font-family: "Source Serif Pro";
+  background-color: #faf8d4;
+}

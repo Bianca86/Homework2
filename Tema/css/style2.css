@@ -1,0 +1,36 @@
+body {
+  background-color: #857885;
+}
+.continut {
+  background-color: #ece5f0;
+  padding: 20px;
+  border-radius: 20px;
+  margin: auto;
+  box-sizing: border-box;
+  width: 360px;
+  text-align: center;
+}
+.logo {
+  margin: auto;
+  text-align: center;
+}
+
+.field {
+  border-radius: 30px;
+  width: 180px;
+  padding: 8px;
+  box-sizing: content-box;
+  border: grey 2px solid;
+  margin-bottom: 8px;
+  text-align: center;
+  font-style: oblique;
+}
+
+.submit {
+  border-radius: 20px;
+  border: solid 2px grey;
+  text-align: center;
+  width: 120px;
+  box-shadow: lightslategrey;
+  padding: 3px;
+}

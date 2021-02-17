@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tema19</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="img">
+  </head>
+  <body>
+    <header>
+      <div class="search">
+        <div class="logo">
+          <a href="index.html">
+            <i class="fa fa-facebook"></i>
+          </a>
+        </div>
+        <form action="">
+          <input type="search" placeholder="Search curs" class="topSearch" />
+        </form>
+      </div>
+      <div class="container">
+        <ul>
+          <li>
+            <a href="#">
+              <i class="middle-nav fa fa-home"></i>
+              <span class="bubble" style="display: none">1</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="middle-nav fa fa-user-circle-o"></i>
+              <span class="bubble" style="display: none">1</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="middle-nav fa fa-desktop"></i>
+              <span class="bubble" style="display: none">1</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="middle-nav fa fa-handshake-o"></i>
+              <span class="bubble" style="display: none">1</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="middle-nav fa fa-users"></i>
+              <span class="bubble" style="display: none">1</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="links">
+        <ul>
+          <li class="user">
+            <a href="#">
+              <img src="https://source.unsplash.com/30x30" class="ceva" />
+              <span>Nume</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-plus"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-comment-o"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-bell"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown">
+              <li>
+                <a href="#">
+                  <i class="fa fa-gear"></i>
+                  Settings
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-question-circle"></i>
+                  Help
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-sign-out"></i>
+                  Log out
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </header>
+    
+
+    <div class="wrapper">
+      <aside>
+        <div class="sticky">Linkuri</div>
+      </aside>
+      <main id="newsfeed">
+   <!-- va fi pppulat de JS-->
+      </main>
+      <aside>
+        <div class="sticky">chat</div>
+      </aside>
+    </div>
+
+    <script src="content.js"></script>
+    <script>
+      const userAccount = document.querySelector("#myAccount");
+      let userDetails = '';
+    
+
+      newsfeedContent.myAccount.length &&
+      newsfeedContent.myAccount.map((userID) => {
+        userDetails += `
+        <div class="links">
+        <ul>
+          <li class="user">
+            <a href="#">
+              <img src="${userID.myAccount.profileImg}" class="ceva" />
+              <span>${userID.myAccount.username}</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-plus"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-comment-o"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-bell"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown">
+              <li>
+                <a href="#">
+                  <i class="fa fa-gear"></i>
+                  Settings
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-question-circle"></i>
+                  Help
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-sign-out"></i>
+                  Log out
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      `;
+      });
+
+      userAccount.innerHTML = userDetails;
+    
+
+    </script>
+
+    <script>
+      const nf = document.querySelector("#newsfeed");
+      let feedContent = '';
+
+      newsfeedContent.newsfeed.length &&
+      newsfeedContent.newsfeed.map((post) => {
+        feedContent += `
+        <article class="post">
+          <div class="header">
+            <div class="profile-image">
+              <a href="#">
+                <img src="${post.author.profileImg}" alt="${post.author.username}" />
+              </a>
+            </div>
+
+            <div class="author">
+              <span class="fullname">
+              ${post.author.firstName}  ${post.author.lastName}  
+              </span>
+              <span class="date">${post.author.postDate}</span>
+            </div>
+
+            <div class="options">
+              <i class="fa fa-ellipsis-h"></i>
+            </div>
+          </div>
+
+          <div class="content">
+            ${
+              post.content.images.length ? 
+              post.content.images.map((image) => `<img src="${image}" alt="${post.author.username}"/>`)
+              : ""
+            }
+            ${post.content.text !=="" ? `<p>${post.content.text}</p>` : ""}
+            
+            ${post.content.videos.length 
+              ? post.content/videos.map(
+                (video) => `<video src="${video}"></video>`)
+                 : ""
+            }
+           
+          </div>
+
+          <div class="reacts">
+            <div class="count-reacts">
+              <span class="icons">
+                <i class="fa fa-thumbs-up"></i>
+              </span>
+              <span class="count">${post.metadata.likes}</span>
+           likes
+            </div>
+
+            <div class="comments-number">
+              <span class="count">${post.metadata.shares}</span>
+              shares
+            </div>
+          </div>
+          <ul class="actions">
+            <li>
+              <i class="fa fa-thumbs-up"></i>
+              <span>Like</span>
+            </li>
+            <li>
+              <i class="fa fa-commenting-o"></i>
+              <span>Comment</span>
+            </li>
+            <li>
+              <i class="fa fa-retweet"></i>
+              <span>Share</span>
+            </li>
+          </ul>
+          <div class="comment-wrapper">
+            <!-- start comment -->
+            <div class="comment-single">
+              <div class="profile-image">
+                <a href="#">
+                  <img src="${newsfeedContent.myAccount.profileImg}" alt="${newsfeedContent.myAccount.username}"/>
+                </a>
+              </div>
+              <div class="comment-content">
+                <input type="text" placeholder="Comment..." />
+              </div>
+            </div>
+            <!-- end comment -->
+
+            ${post.metadata.comments.length 
+              ? post.metadata.comments.map(
+                (comment) => `<div class="comment-single">
+              <div class="profile-image">
+                <a href="#">
+                  <img src="${comment.author.profileImg}" alt="${comment.author.username}"/>
+                </a>
+              </div>
+              <div class="comment-content">
+                <a href="#">${comment.author.firstName} ${comment.author.lastName}</a>
+                <span class="date">${comment.author.postDate}</span>
+                <p>${comment.content}</p>
+              </div>
+            </div>`) : ""}
+
+
+
+
+
+            
+          </div>
+        </article>
+      `;
+      });
+
+      nf.innerHTML = feedContent;
+    </script>
+  </body>
+  
+</html>
